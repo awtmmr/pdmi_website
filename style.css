@@ -1,3 +1,4 @@
+/* ベース構造：流れと呼吸のための余白とフォント設計 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
                "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
@@ -6,21 +7,32 @@ body {
   color: #222;
   background-color: #fff;
   margin: 0;
-  padding: 2rem;
+  padding: 3rem 2rem 2rem 2rem; /* 上部に少し多めの余白：導入の呼吸 */
 }
 
+/* 段落：流れの単位としての余白 */
 p {
-  margin-bottom: 2.5em;
+  margin-bottom: 2.5em; /* 段落間に約2〜3行分の余白：せせらぎの間合い */
 }
 
+/* 最初の段落：導入の詩的ニュアンス */
+p:first-of-type {
+  font-style: italic;
+  color: #444;
+}
+
+/* 見出し：構造の節目としての余白と強調 */
 h1, h2 {
-  margin-top: 3em;
-  margin-bottom: 1em;
+  margin-top: 3em;     /* 節目の前に深呼吸 */
+  margin-bottom: 1em;  /* 節目の後に余韻 */
   font-weight: 600;
   line-height: 1.4;
 }
 
-p:first-of-type {
-  font-style: italic;
-  color: #444;
+/* h1だけ特別な存在感を */
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #ccc; /* 構造の始まりを示す線 */
+  padding-bottom: 0.5em;
 }
