@@ -15,10 +15,10 @@ section, header, footer {
   margin: 0 auto;
 }
 
-/* ヒーローセクション */
+/* ヒーローセクション（単色・左揃え） */
 .hero {
-  background: linear-gradient(to right, #e0f7fa, #fce4ec);
-  text-align: center;
+  background-color: #e0f7fa;
+  text-align: left;
   padding: 4rem 1rem;
   border-bottom: 1px solid #ddd;
 }
@@ -34,7 +34,7 @@ section, header, footer {
   color: #666;
 }
 
-/* 画像のながれと構造 */
+/* ヒーロー画像のながれと構造 */
 .hero img {
   width: 100%;
   height: auto;
@@ -73,10 +73,11 @@ li {
 /* フッター */
 footer {
   background-color: #eceff1;
-  text-align: center;
+  text-align: left;
   font-size: 0.9rem;
   color: #777;
   border-top: 1px solid #ccc;
+  padding: 2rem 1rem;
 }
 
 /* リンクの詩的な演出 */
@@ -105,5 +106,10 @@ a:hover {
 
   h3 {
     font-size: 1.2rem;
+  }
+
+  .hero img {
+    margin-top: 1.5rem;
+    border-radius: 8px;
   }
 }
