@@ -2,7 +2,7 @@
    ながれと構造の研究所 - スタイル定義
    =============================== */
 
-/* カラーパレットとフォント設定 */
+/* === 共通設定（全体に適用） === */
 :root {
   --section-bg: #e0f7fa;
   --accent-color: #80cbc4;
@@ -21,14 +21,16 @@ body {
   background-color: #f9f9f9;
 }
 
-/* セクションの余白と流れ */
+/* === セクション共通の余白と幅設定 === */
+/* 対象: <section>, <header>, <footer> */
 section, header, footer {
   padding: 3rem 1rem;
   max-width: 960px;
   margin: 0 auto;
 }
 
-/* ヒーローセクション（単色・左揃え） */
+/* === ヒーローセクション === */
+/* 対象: <header class="hero"> */
 .hero {
   background-color: var(--section-bg);
   text-align: left;
@@ -36,24 +38,27 @@ section, header, footer {
   border-bottom: 1px solid #ddd;
 }
 
+/* 対象: <h1>（ヒーロー見出し） */
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #444;
 }
 
+/* 対象: <h3>（ヒーロー副見出し） */
 .hero h3 {
   font-size: 1.4rem;
   margin-top: 1rem;
   color: #555;
 }
 
+/* 対象: <p>（ヒーロー本文） */
 .hero p {
   font-size: 1.2rem;
   color: var(--text-subtle);
 }
 
-/* ヒーロー画像のながれと構造 */
+/* 対象: <img>（ヒーロー画像） */
 .hero img {
   width: 100%;
   height: auto;
@@ -64,7 +69,8 @@ section, header, footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* 見出しの階層構造 */
+/* === 見出しの階層構造 === */
+/* 対象: <h2>（営業品目・プロフィール） */
 h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -73,13 +79,15 @@ h2 {
   color: var(--text-main);
 }
 
+/* 対象: <h3>（課題・プロフィール内の小見出し） */
 h3 {
   font-size: 1.4rem;
   margin-top: 2rem;
   color: #555;
 }
 
-/* リストの構造化 */
+/* === リスト構造（営業品目） === */
+/* 対象: <ul> <li> */
 ul {
   list-style-type: disc;
   padding-left: 1.5rem;
@@ -89,7 +97,8 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* フッター（お問い合わせセクション） */
+/* === フッター（お問い合わせセクション） === */
+/* 対象: <footer> */
 footer {
   background-color: var(--section-bg); /* ヒーローと統一 */
   text-align: left;
@@ -99,6 +108,7 @@ footer {
   padding: 2rem 1rem;
 }
 
+/* 対象: <p class="copyright"> */
 footer .copyright {
   margin-top: 2rem;
   font-size: 0.8rem;
@@ -106,7 +116,8 @@ footer .copyright {
   text-align: left;
 }
 
-/* リンクの詩的な演出 */
+/* === リンクの演出（電話・メール） === */
+/* 対象: <a> */
 a {
   color: #00796b;
   text-decoration: none;
@@ -116,14 +127,28 @@ a:hover {
   text-decoration: underline;
 }
 
-/* レスポンシブ対応 */
-@media screen and (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
+/* === レスポンシブ対応（スマホ・タブレット） === */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   section, header, footer {
     padding: 2rem 1rem;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 
   h2 {
@@ -134,8 +159,23 @@ a:hover {
     font-size: 1.2rem;
   }
 
+  ul {
+    padding-left: 1rem;
+  }
+
   .hero img {
     margin-top: 1.5rem;
     border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+
+  footer .copyright {
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
   }
 }
