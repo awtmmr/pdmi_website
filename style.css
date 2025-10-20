@@ -213,3 +213,9 @@ caption {
   font-size: 1rem;
   color: var(--text-subtle);
 }
+
+/* プロフィールのインデント */
+.profile-indent {
+  padding-left: 2rem; /* インデント幅を調整 */
+  color: var(--text-subtle); /* 任意：少し柔らかい色に */
+}
