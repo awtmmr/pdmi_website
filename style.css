@@ -10,6 +10,8 @@
   --text-subtle: #666;
   --text-muted: #777;
   --font-main: "Helvetica Neue", sans-serif;
+  --pillar-bg: #f0f9f8;
+  --border-color: #ddd;
 }
 
 body {
@@ -35,7 +37,7 @@ section, header, footer {
   background-color: var(--section-bg);
   text-align: left;
   padding: 4rem 1rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* 対象: <h1>（ヒーロー見出し） */
@@ -70,7 +72,7 @@ section, header, footer {
 }
 
 /* === 見出しの階層構造 === */
-/* 対象: <h2>（営業品目・プロフィール） */
+/* 対象: <h2>（メインセクション見出し） */
 h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -79,28 +81,119 @@ h2 {
   color: var(--text-main);
 }
 
-/* 対象: <h3>（課題・プロフィール内の小見出し） */
+/* 対象: <h3>（小見出し） */
 h3 {
   font-size: 1.4rem;
   margin-top: 2rem;
   color: #555;
 }
 
-/* === リスト構造（営業品目） === */
+/* === サービスコンセプトの引用文 === */
+.service-concept {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 1rem 0 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--accent-color);
+}
+
+/* === サービスの柱（3カラム） === */
+.service-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pillar {
+  background-color: var(--pillar-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.pillar h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #2c5f5d;
+}
+
+.pillar p {
+  margin: 0;
+  color: var(--text-subtle);
+  line-height: 1.7;
+}
+
+/* === リスト構造 === */
 /* 対象: <ul> <li> */
 ul {
   list-style-type: disc;
   padding-left: 1.5rem;
+  line-height: 1.8;
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+/* === テーブルの視認性向上 === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #e0f7fa;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 第1列（レベル）を少し広めに */
+td:first-child {
+  font-weight: 600;
+  color: #2c5f5d;
+}
+
+/* テーブルキャプションの左寄せ */
+caption {
+  text-align: left;
+  caption-side: top;
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-subtle);
+}
+
+/* === プロフィールのインデント === */
+.profile-indent {
+  padding-left: 2rem;
+  color: var(--text-subtle);
 }
 
 /* === フッター（お問い合わせセクション） === */
 /* 対象: <footer> */
 footer {
-  background-color: var(--section-bg); /* ヒーローと統一 */
+  background-color: var(--section-bg);
   text-align: left;
   font-size: 0.9rem;
   color: var(--text-muted);
@@ -116,15 +209,17 @@ footer .copyright {
   text-align: left;
 }
 
-/* === リンクの演出（電話・メール） === */
+/* === リンクの演出 === */
 /* 対象: <a> */
 a {
   color: #00796b;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #004d40;
 }
 
 /* === レスポンシブ対応（スマホ・タブレット） === */
@@ -151,6 +246,13 @@ a:hover {
     font-size: 1rem;
   }
 
+  .hero img {
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+
   h2 {
     font-size: 1.5rem;
   }
@@ -159,15 +261,37 @@ a:hover {
     font-size: 1.2rem;
   }
 
+  .service-concept {
+    font-size: 1.1rem;
+  }
+
+  /* サービスの柱を1カラムに */
+  .service-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pillar {
+    padding: 1.2rem;
+  }
+
   ul {
     padding-left: 1rem;
   }
 
-  .hero img {
-    margin-top: 1.5rem;
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
+  /* テーブルのレスポンシブ対応 */
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  /* 必要に応じてテーブルを縦スクロール可能に */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   footer {
@@ -178,32 +302,27 @@ a:hover {
     font-size: 0.75rem;
     margin-top: 1.5rem;
   }
+
+  .profile-indent {
+    padding-left: 1rem;
+  }
 }
 
-/* テーブルの視認性向上・列サイズ統一 */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed; /* 各列の幅を均等に分配 */
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
-}
+/* === 小さいスマホ向けの追加調整 === */
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.75rem;
-  text-align: left;
-  vertical-align: top;
-  word-wrap: break-word; /* 長い語句の折り返し */
-}
+  h2 {
+    font-size: 1.3rem;
+  }
 
-th {
-  background-color: #e0f7fa;
-  font-weight: bold;
-  color: #333;
-}
+  table {
+    font-size: 0.8rem;
+  }
 
+<<<<<<< HEAD
 /* テーブルキャプションの左寄せ */
 caption {
   text-align: left;
@@ -218,4 +337,9 @@ caption {
 .profile-indent {
   padding-left: 2rem; /* インデント幅を調整 */
   color: var(--text-subtle); /* 任意：少し柔らかい色に */
+=======
+  th, td {
+    padding: 0.4rem;
+  }
+>>>>>>> dev
 }
