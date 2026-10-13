@@ -629,3 +629,96 @@ h4 {
 }
 
 .hero h1 { word-break: keep-all; overflow-wrap: anywhere; }
+
+/* ---- スキル構造（積み上げ図） ---- */
+.skill-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.5rem 0 0;
+}
+
+.skill-stack figcaption {
+    margin-bottom: 0.4rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.layer {
+    padding: 1.1rem 1.4rem 1.3rem;
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--teal);
+    border-radius: 5px 18px 5px 18px;
+    background: var(--white);
+    box-shadow: 0 6px 16px rgba(16, 44, 59, 0.06);
+}
+
+.layer-top { border-left-color: var(--coral); }
+.layer-mid { border-left-color: var(--gold); }
+.layer-base { border-left-color: var(--teal); background: var(--teal-light); }
+
+.layer-name {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--night);
+    font-weight: 700;
+}
+
+.layer-no {
+    display: inline-flex;
+    width: 1.7rem;
+    height: 1.7rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--night);
+    font-size: 0.85rem;
+}
+
+.layer-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 0.9rem;
+}
+
+.skill-box {
+    padding: 0.9rem 1.1rem;
+    border: 1px dashed rgba(16, 44, 59, 0.25);
+    border-radius: 4px 12px 4px 12px;
+    background: var(--paper);
+}
+
+.skill-box-name {
+    margin-bottom: 0.4rem;
+    color: var(--teal);
+    font-weight: 700;
+}
+
+.skill-box ul {
+    padding-left: 1.2rem;
+    font-size: 0.92rem;
+}
+
+.skill-chip {
+    color: var(--night);
+    background: var(--white);
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .layer { padding: 1rem; }
+    .layer-inner { grid-template-columns: 1fr; }
+}
+
+/* モバイルでは読む順（1→2→3）に並べ替え */
+@media (max-width: 768px) {
+    .skill-stack figcaption { order: 0; }
+    .skill-stack .layer-base { order: 1; }
+    .skill-stack .layer-mid { order: 2; }
+    .skill-stack .layer-top { order: 3; }
+}
