@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DXを定義する｜研究ノート｜ながれと構造の研究所</title>
+<meta name="description" content="DXを関数の記法で定義し、「デジタル化」と「DX」を見分ける判定式を示す。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#fff8e9}
+a{color:#087f80}a:hover{color:#065f60}
+nav a:hover{background:#d9f1e9}
+</style>
+</head>
+<body>
+<div style="font-family: 'Noto Sans JP', sans-serif; color: #273943; background: #fff8e9; line-height: 1.8; width: 100%;">
+
+<header style="position: sticky; top: 0; z-index: 100; background: #fff8e9; border-bottom: 5px solid #087f80; box-shadow: 0 4px 16px rgba(9, 33, 47, 0.10);">
+<div style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+<a href="../index.html" style="display: flex; align-items: center; gap: 12px; color: #102c3b; text-decoration: none; font-weight: 700; font-size: 18px; letter-spacing: 0.04em;">
+<span aria-hidden="true" style="display: block; width: 14px; height: 28px; border: 3px solid #f5c84c; border-radius: 9px 3px 9px 3px; background: #087f80;"></span>
+ながれと構造の研究所</a>
+<nav aria-label="メイン">
+<div style="display: flex; flex-wrap: wrap; gap: 4px;">
+<a href="../index.html" style="color: #102c3b; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 12px; border-radius: 999px;">トップ</a>
+<a href="../index.html#promise" style="color: #102c3b; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 12px; border-radius: 999px;">私たちの約束</a>
+<a href="../services.html" style="color: #102c3b; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 12px; border-radius: 999px;">サービス</a>
+<a href="../approach.html" style="color: #102c3b; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 12px; border-radius: 999px;">進め方</a>
+<a href="../papers.html" aria-current="page" style="color: #087f80; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; font-size: 14px; font-weight: 700; padding: 10px 12px; border-radius: 999px;">研究ノート</a>
+<a href="../contact.html" style="color: #fffdf7; background: #087f80; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 16px; border-radius: 999px;">お問い合わせ</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section style="background: #09212f; color: #fffdf7; padding: 80px 24px 64px;">
+<div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;">
+<p style="margin: 0; font-size: 14px;"><a href="../papers.html" style="color: #d9f1e9;">研究ノート</a><span style="color: #64747a;">　›　</span><span style="color: #d9f1e9;">ノート No.1</span></p>
+<p style="margin: 0; color: #f5c84c; font-size: 14px; font-weight: 700; letter-spacing: 0.16em;">RESEARCH NOTE No.1</p>
+<h1 style="margin: 0; font-size: clamp(26px, 4vw, 40px); line-height: 1.5; font-weight: 700;">DXを定義する<br><span style="font-size: 0.55em; font-weight: 500;">変革を、デジタルで微分する</span></h1>
+<p style="margin: 0; color: #d9f1e9; font-size: 14px;">Mamoru Awata（粟田 守）　／　2026年10月</p>
+</div>
+</section>
+<div aria-hidden="true" style="height: 12px; display: flex;">
+<div style="flex: 34; background: #087f80;"></div><div style="flex: 33; background: #f5c84c;"></div><div style="flex: 17; background: #e84d3d;"></div><div style="flex: 16; background: #c83270;"></div>
+</div>
+
+<section style="padding: 64px 24px 72px;">
+<article style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;">
+<p style="margin: 0; font-size: 18px; color: #102c3b; font-weight: 500;">「DX」は便利な言葉です。けれど定義のないまま使われると、IT化やツール導入と区別がつかなくなります。本ノートでは、DXを関数の記法で定義し、判定できる形にしてみます。</p>
+<h2 style="margin: 24px 0 0; color: #102c3b; font-size: 24px; line-height: 1.5; border-left: 6px solid #087f80; padding-left: 14px;">変革を、関数として書く</h2>
+<p style="margin: 0;">変革（CX）の中身は、どこから出発し、どこを目指すかで決まります。つまり変革は、現状と目指す姿の関数として書けます。</p>
+<div style="background: #102c3b; color: #fffdf7; border-radius: 16px; padding: 24px 28px; text-align: center;"><p style="margin: 0; font-family: 'Times New Roman', serif; font-style: italic; font-size: 26px; letter-spacing: 0.04em;">CX = f ( as-is , to-be )</p><p style="margin: 8px 0 0; color: #d9f1e9; font-size: 14px; font-weight: 400;">変革は、現状（as-is）と目指す姿（to-be）で決まる</p></div>
+<p style="margin: 0;">目指す姿が描けていない変革は、関数の引数が欠けている状態です。出発点を正しく見ていない変革も同じです。</p>
+<h2 style="margin: 24px 0 0; color: #102c3b; font-size: 24px; line-height: 1.5; border-left: 6px solid #087f80; padding-left: 14px;">DXは、デジタルを変数に持つ変革</h2>
+<p style="margin: 0;">では、DXとは何か。デジタル（d）を変数として含む変革、と定義します。</p>
+<div style="background: #102c3b; color: #fffdf7; border-radius: 16px; padding: 24px 28px; text-align: center;"><p style="margin: 0; font-family: 'Times New Roman', serif; font-style: italic; font-size: 26px; letter-spacing: 0.04em;">DX = CX ( d )</p></div>
+<p style="margin: 0;">ちなみに d(cx) = c·dx という語呂合わせは、意図したものです。</p>
+<h2 style="margin: 24px 0 0; color: #102c3b; font-size: 24px; line-height: 1.5; border-left: 6px solid #087f80; padding-left: 14px;">判定式その一：デジタルは、変革に効いているか</h2>
+<div style="background: #102c3b; color: #fffdf7; border-radius: 16px; padding: 24px 28px; text-align: center;"><p style="margin: 0; font-family: 'Times New Roman', serif; font-style: italic; font-size: 26px; letter-spacing: 0.04em;">∂CX / ∂d ≠ 0</p><p style="margin: 8px 0 0; color: #d9f1e9; font-size: 14px; font-weight: 400;">デジタルを動かしたとき、変革が実際に動くか</p></div>
+<p style="margin: 0;">ツールを入れたのに、業務も組織も何も変わらない。よくある光景ですが、これは偏微分がゼロの状態です。そのデジタルは、変革に効いていません。</p>
+<h2 style="margin: 24px 0 0; color: #102c3b; font-size: 24px; line-height: 1.5; border-left: 6px solid #087f80; padding-left: 14px;">判定式その二：デジタル化とDXを分けるもの</h2>
+<div style="background: #102c3b; color: #fffdf7; border-radius: 16px; padding: 24px 28px; text-align: center;"><p style="margin: 0; font-family: 'Times New Roman', serif; font-style: italic; font-size: 26px; letter-spacing: 0.04em;">∂²CX / ∂d ∂org ≠ 0</p><p style="margin: 8px 0 0; color: #d9f1e9; font-size: 14px; font-weight: 400;">デジタルの効き目が、組織のありようによって変わるか</p></div>
+<p style="margin: 0;">紙をPDFに、ハンコを電子承認に置き換える。こうした「デジタル化」では、デジタルの効果は組織と無関係に決まります。DXはそうではありません。デジタルと組織が掛け合わさって初めて生まれる変化、つまり交差項がゼロでないことが、DXの条件です。</p>
+<div style="background: #fffdf7; border: 3px solid #f5c84c; border-radius: 16px; padding: 22px 26px; text-align: center; color: #102c3b; font-size: 20px; font-weight: 700; line-height: 1.7;">デジタルの効き目が組織と無関係なら、それはデジタル化。<br>組織とともに効き目が変わるなら、それがDX。</div>
+<h2 style="margin: 24px 0 0; color: #102c3b; font-size: 24px; line-height: 1.5; border-left: 6px solid #087f80; padding-left: 14px;">実務への含意</h2>
+<p style="margin: 0;">この定義から、当研究所の方針が一つ導かれます。最初にDXの要否そのものを問い直すことです。∂CX/∂d がゼロに近いなら、デジタルは要りません。要らないものをなくすのが先で、デジタルは本当に必要になったときに使います。</p>
+</article>
+</section>
+
+<section style="background: #fffdf7; padding: 64px 24px; border-top: 1px solid #e7d9bd;">
+<div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+<p style="margin: 0; color: #087f80; font-size: 14px; font-weight: 700; letter-spacing: 0.12em;">BEYOND THIS NOTE</p>
+<h2 style="margin: 0; color: #102c3b; font-size: 24px; line-height: 1.5;">この先の議論</h2>
+<p style="margin: 0;">ここで紹介したのは入口です。次のような論点は、皆さんの組織の状況に合わせて、ご相談の中でお話しします。</p>
+<ul style="margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 6px;"><li>「目指す姿（to-be）」を、どうやって書き出すか</li><li>「組織（org）」の変化を、何で観測するか</li><li>判定式がゼロに近いと分かったとき、取り組みをどう組み替えるか</li></ul>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px;">
+<a href="../contact.html" style="display: inline-block; background: #087f80; color: #fffdf7; font-weight: 700; text-decoration: none; padding: 12px 24px; border-radius: 999px;">この続きを聞きたい</a>
+<a href="../papers.html" style="display: inline-block; border: 2px solid #087f80; color: #087f80; font-weight: 700; text-decoration: none; padding: 10px 22px; border-radius: 999px;">研究ノートの一覧へ</a>
+</div>
+</div>
+</section>
+
+<div style="background: #fff8e9; padding: 28px 24px 0;">
+<div style="max-width: 1080px; margin: 0 auto;">
+<a href="../index.html" style="display: inline-block; border: 2px solid #087f80; color: #087f80; font-weight: 700; text-decoration: none; padding: 10px 22px; border-radius: 999px;">← トップページへ戻る</a>
+</div>
+</div>
+<footer style="background: #fff8e9; padding: 32px 24px;">
+<div style="max-width: 1080px; margin: 0 auto; font-size: 14px;">
+<p style="margin: 0; color: #64747a;">© 2026 Patterns &amp; Dynamics Modulation Institute</p>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
