@@ -51,7 +51,7 @@ nav a:hover{background:#d9f1e9}
 <div style="max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; text-align: center; align-items: center;">
 <h2 style="margin: 0; font-size: 28px; line-height: 1.5;">まずは無料の<br>カウンセリングから</h2>
 <p style="margin: 0; color: #d9f1e9;">最初はカウンセリングから始まります。<br>「何が課題か分からない」<br>「DXが必要かどうか分からない」<br>という段階でのご相談を歓迎します。<br><br>なお、当初8時間（2時間×4回程度）の<br>カウンセリングは無料です。</p>
-<a href="mailto:awtmmr@pdmi.jp?subject=%E3%82%AB%E3%82%A6%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E4%BE%9D%E9%A0%BC" style="display: inline-block; background: #f5c84c; color: #09212f; font-weight: 700; font-size: 18px; text-decoration: none; padding: 16px 32px; border-radius: 999px;">相談してみる</a>
+<a href="mailto:awtmmr@pdmi.jp?subject=%E7%84%A1%E6%96%99%E3%82%AB%E3%82%A6%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" onclick="return startCounselingEmail(event);" style="display: inline-block; background: #f5c84c; color: #09212f; font-weight: 700; font-size: 18px; text-decoration: none; padding: 16px 32px; border-radius: 999px;">相談してみる</a>
 </div>
 </section>
 
@@ -67,5 +67,39 @@ nav a:hover{background:#d9f1e9}
 </footer>
 
 </div>
+<dialog id="counseling-dialog" aria-labelledby="counseling-dialog-title" style="max-width: 420px; width: calc(100% - 32px); border: 1px solid #e7d9bd; border-radius: 16px; padding: 28px; background: #fff8e9; color: #273943; font-family: 'Noto Sans JP', sans-serif;">
+<form onsubmit="return submitCounselingEmail(event);" style="display: flex; flex-direction: column; gap: 16px;">
+<h2 id="counseling-dialog-title" style="margin: 0; color: #102c3b; font-size: 22px;">ご相談先について</h2>
+<label for="counseling-client-name">会社名・クライアント名</label>
+<input id="counseling-client-name" name="clientName" type="text" required autocomplete="organization" style="box-sizing: border-box; width: 100%; border: 1px solid #64747a; border-radius: 8px; padding: 12px; font: inherit;">
+<div style="display: flex; justify-content: flex-end; gap: 10px;">
+<button type="button" onclick="document.getElementById('counseling-dialog').close();" style="border: 1px solid #087f80; border-radius: 999px; padding: 10px 18px; background: transparent; color: #087f80; font: inherit; cursor: pointer;">キャンセル</button>
+<button type="submit" style="border: 0; border-radius: 999px; padding: 10px 18px; background: #087f80; color: #fffdf7; font: inherit; font-weight: 700; cursor: pointer;">メールを作成</button>
+</div>
+</form>
+</dialog>
+<script>
+function startCounselingEmail(event) {
+  event.preventDefault();
+  const dialog = document.getElementById("counseling-dialog");
+  dialog.showModal();
+  document.getElementById("counseling-client-name").focus();
+  return false;
+}
+
+function submitCounselingEmail(event) {
+  event.preventDefault();
+  const trimmedName = document.getElementById("counseling-client-name").value.trim();
+  if (!trimmedName) {
+    document.getElementById("counseling-client-name").focus();
+    return false;
+  }
+
+  const subject = encodeURIComponent(`無料カウンセリングのご相談｜${trimmedName}`);
+  document.getElementById("counseling-dialog").close();
+  window.location.href = `mailto:awtmmr@pdmi.jp?subject=${subject}`;
+  return false;
+}
+</script>
 </body>
 </html>
